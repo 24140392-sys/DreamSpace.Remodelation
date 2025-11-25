@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Remodelaciones | Constructora Elegante</title>
+ 
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+
+  <style>
+    
+    :root {
+      --azul-marino: #0b1a33;
+      --crema: #f9f5e7;
+      --dorado: #d4af37;
+      --blanco: #ffffff;
+    }
+
+
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background-color: var(--crema);
+      color: var(--azul-marino);
+      padding-top: 6rem;
+    }
+
+
+    
+    header {
+      position: fixed;
+      width: 100%;
+      top: 0;
+      background-color: var(--azul-marino);
+      color: var(--crema);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      z-index: 100;
+    }
+
+
+    header h1 {
+      margin: 0;
+      font-size: 1.6rem;
+    }
+
+
+    nav a {
+      color: var(--crema);
+      margin-left: 1.2rem;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+
+    nav a:hover {
+      color: var(--dorado);
+    }
+   
+    
+    .btn-principal {
+      display: inline-block;
+      background-color: var(--dorado);
+      color: var(--azul-marino);
+      padding: 0.8rem 1.5rem;
+      border-radius: 5px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: background-color 0.3s ease;
+    }
+
+
+    .btn-principal:hover {
+      background-color: #c09b2d;
+    }
+
+
+    
+    section {
+      padding: 3rem 0;
+    }
+
+
+    
+    .hero-remodelaciones {
+      background: linear-gradient(rgba(11, 26, 51, 0.7), rgba(11, 26, 51, 0.7)),
+                  url('data:image/jpeg;base64,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') center/cover;
+      color: var(--blanco);
+      padding: 6rem 0;
+      text-align: center;
+    }
+   
+    .hero-remodelaciones h2 {
+      font-size: 3rem;
+      font-weight: 700;
+      color: var(--dorado);
+    }
+
+
+    
+    .beneficios-card {
+        border: none;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+
+    .beneficios-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+    }
+   
+    
+    .proceso-item {
+        display: flex;
+        align-items: flex-start;
+        margin-bottom: 2rem;
+    }
+   
+    .proceso-icon {
+        font-size: 2rem;
+        color: var(--dorado);
+        margin-right: 1.5rem;
+        min-width: 40px;
+    }
+
+
+    
+    footer {
+      background-color: var(--azul-marino);
+      color: var(--crema);
+      text-align: center;
+      padding: 2rem 1rem;
+    }
+  </style>
+</head>
+<body>
+
+
+  <header>
+    <h1>Dream Space</h1>
+    <nav>
+     <a href="https://24140392-sys.github.io/DreamSpace.Constr./">Inicio</a>
+<a href="https://24140392-sys.github.io/DreamSpace.Observation/">Supervición</a> 
+<a href="https://24140392-sys.github.io/DreamSpace.Design/">Diseños</a>
+<a href="https://24140392-sys.github.io/DreamSpace.Costs/">Costos</a>
+    </nav>
+  </header>
+
+
+  <section class="hero-remodelaciones">
+    <div class="container">
+      <h2>Transformamos tus espacios con elegancia y funcionalidad</h2>
+      <p class="lead mt-3 mb-4">Especialistas en remodelación de cocinas, baños, oficinas y espacios completos. Creamos ambientes que inspiran.</p>
+      <a href="#contacto-form" class="btn-principal">Solicita tu Cotización Gratuita</a>
+    </div>
+  </section>
+
+
+  <section class="bg-light" id="servicios-detalle">
+    <div class="container">
+      <h3 class="text-center mb-5 display-5 fw-bold text-uppercase">Nuestros Servicios de Remodelación</h3>
+      <div class="row g-4">
+       
+        <div class="col-md-6 col-lg-4">
+          <div class="card beneficios-card h-100 p-3">
+            <div class="card-body text-center">
+              <i class="bi bi-tools text-dorado fs-3" style="color: var(--dorado);">🛠️</i>
+              <h5 class="card-title fw-bold mt-2">Remodelación de Cocinas</h5>
+              <p class="card-text">Diseños modernos y ergonómicos. Mejoramos el flujo, la iluminación y la capacidad de almacenamiento.</p>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="col-md-6 col-lg-4">
+          <div class="card beneficios-card h-100 p-3">
+            <div class="card-body text-center">
+              <i class="bi bi-house-door-fill text-dorado fs-3" style="color: var(--dorado);">🛁</i>
+              <h5 class="card-title fw-bold mt-2">Renovación de Baños</h5>
+              <p class="card-text">Convierte tu baño en un oasis de relajación con acabados de lujo y soluciones innovadoras.</p>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="col-md-6 col-lg-4">
+          <div class="card beneficios-card h-100 p-3">
+            <div class="card-body text-center">
+              <i class="bi bi-building-fill text-dorado fs-3" style="color: var(--dorado);">🏢</i>
+              <h5 class="card-title fw-bold mt-2">Reforma Integral</h5>
+              <p class="card-text">Remodelamos pisos, casas u oficinas completamente, garantizando una ejecución de principio a fin.</p>
+            </div>
+          </div>
+        </div>
+       
+      </div>
+    </div>
+  </section>
+
+
+  <section id="proceso">
+    <div class="container">
+      <h3 class="text-center mb-5 display-5 fw-bold text-uppercase">Nuestro Proceso de Remodelación</h3>
+     
+      <div class="row justify-content-center">
+          <div class="col-lg-8">
+             
+              <div class="proceso-item">
+                  <span class="proceso-icon">1</span>
+                  <div>
+                      <h4 class="fw-bold">Consulta y Diseño</h4>
+                      <p>Escuchamos tus ideas y creamos planos y renders 3D detallados para visualizar el resultado final.</p>
+                  </div>
+              </div>
+
+
+              <div class="proceso-item">
+                  <span class="proceso-icon">2</span>
+                  <div>
+                      <h4 class="fw-bold">Planificación y Presupuesto</h4>
+                      <p>Establecemos un cronograma y un presupuesto transparente, sin costos ocultos. Seleccionamos materiales de alta calidad.</p>
+                  </div>
+              </div>
+
+
+              <div class="proceso-item">
+                  <span class="proceso-icon">3</span>
+                  <div>
+                      <h4 class="fw-bold">Ejecución de la Obra</h4>
+                      <p>Nuestro equipo de profesionales inicia la transformación, manteniendo la limpieza y el orden, bajo estricta supervisión.</p>
+                  </div>
+              </div>
+             
+              <div class="proceso-item">
+                  <span class="proceso-icon">4</span>
+                  <div>
+                      <h4 class="fw-bold">Entrega y Garantía</h4>
+                      <p>Te entregamos el espacio renovado listo para usar. Ofrecemos garantía post-obra para tu tranquilidad.</p>
+                  </div>
+              </div>
+             
+          </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="bg-light" id="contacto-form">
+    <div class="container">
+        <h3 class="text-center mb-4 display-6 fw-bold">¡Empecemos tu Remodelación!</h3>
+        <p class="text-center mb-5">Déjanos tus datos y te contactaremos para una asesoría sin compromiso.</p>
+
+
+        <div class="row justify-content-center">
+            <div class="col-lg-6">
+                <form class="p-4 border rounded shadow-sm bg-white">
+                    <div class="mb-3">
+                        <label for="nombre" class="form-label">Nombre completo</label>
+                        <input type="text" class="form-control" id="nombre" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Correo electrónico</label>
+                        <input type="email" class="form-control" id="email" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="telefono" class="form-label">Teléfono</label>
+                        <input type="tel" class="form-control" id="telefono">
+                    </div>
+                    <div class="mb-3">
+                        <label for="mensaje" class="form-label">Cuéntanos sobre tu proyecto de remodelación</label>
+                        <textarea class="form-control" id="mensaje" rows="4" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary w-100" style="background-color: var(--azul-marino); border-color: var(--azul-marino);">Enviar Solicitud</button>
+                </form>
+            </div>
+        </div>
+    </div>
+  </section>
+
+
+  <footer>
+    <p>&copy; 2025 Dream space</p>
+  </footer>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>
